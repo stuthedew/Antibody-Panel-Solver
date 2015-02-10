@@ -34,6 +34,8 @@
 .cproject
 .project
 .settings/*
+Debug/*
+Release/*
 
 # Ignore the build and lib dirs
 build
