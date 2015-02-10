@@ -45,4 +45,4 @@ lib/*
 bin/*
 
 # G test
-gtest*/*
+gtest/*
