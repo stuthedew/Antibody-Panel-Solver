@@ -3,18 +3,22 @@
 #include <antibodyParser.h>
 
 using namespace std;
+
+
 Row test;
 int main(int argc, char *argv[]) {
+
 	ifstream file ( "data/screen4.csv" );
 	string value, dummyValue, subString;
 
 	getline ( file, dummyValue, '\r' );
+	getline ( file, dummyValue, ',' );
 
 	while ( file.good() )
 		{
 		getline ( file, value, ',' );
 		
-		cout << value; // display value removing the first and the last character from it
+		cout << value << '_'; // display value removing the first and the last character from it
 		subString = value.substr();
 		}
 	cout << endl << test.testFunc();
