@@ -32,7 +32,7 @@ class Row{
 
 using namespace std;
 int main(int argc, char *argv[]) {
-	ifstream file ( "screen4.csv" ); 
+	ifstream file ( "data/screen4.csv" );
 	string value, dummyValue, subString;
 
 	getline ( file, dummyValue, '\r' );
