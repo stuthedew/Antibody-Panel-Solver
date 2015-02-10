@@ -46,3 +46,4 @@ bin/*
 
 # G test
 gtest*/*
+gtest*
