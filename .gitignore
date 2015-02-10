@@ -43,3 +43,6 @@ lib/*
 
 # Ignore any executables
 bin/*
+
+# G test
+gtest*/*
