@@ -29,9 +29,11 @@
 
 # Added by me!
 *.xls*
+
 #eclipse files
 .cproject
 .project
+.settings/*
 
 # Ignore the build and lib dirs
 build
