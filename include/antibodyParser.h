@@ -25,9 +25,9 @@ typedef enum{
 
 class Row{
 	public:
-		Row();
+		Row( std::string s, std::string delim );
 
-		int testFunc();
+		int32_t extract( int skip = 1 );
 
 	private:
 		typedef struct antibody_t{
@@ -37,7 +37,9 @@ class Row{
 			antibody_t( antibody_e e, bool b):epitope( e ), reaction( b ){}
 		}antibody_t;
 
-	antibody_t* _screen;
+		std::string
+			_rawString,
+			_delim ;
 };
 
 
