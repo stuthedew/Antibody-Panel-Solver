@@ -1,41 +1,43 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
-#include <antibodyParser.h>
-#include <bitset>
+#include <AntibodyParser.h>
+#include <AntibodyLoader.h>
+#include <BloodSample.h>
+#include <vector>
 
 using namespace std;
 
-typedef union {
-	int32_t blob;
-	struct{
-		int32_t react:1;
-		int32_t data:31;
-	};
-}data_t;
-
+BloodSample Unkown;
+vector<BloodSample> Screen;
+vector<BloodSample> Reflex;
 
 int main(int argc, char *argv[]) {
-
-	ifstream file ( "data/screen4.csv" );
+/*
+	//ifstream file ( "data/screen4.csv" );
+	ifstream file ( "data/reflexPanel.csv" );
 	string value, dummyValue, subString;
 
 	getline ( file, dummyValue, '\r' );
-	getline ( file, dummyValue, '\r' );
-	Row test(dummyValue, ",");
-	data_t testData;
-	testData.data = test.extract();
-	bitset<25> y(testData.data);
-	cout << y  <<endl;
 
-/*
-	while ( file.good() )
-		{
-		getline ( file, value, ',' );
-		
-		cout << value << '_'; // display value removing the first and the last character from it
-		subString = value.substr();
-		}
+	Row test;
+	cout << sizeof(antibody_e);
+	while(file.good()){
+		getline ( file, dummyValue, '\r' );
+		test.setString(dummyValue, ",");
+		antigen_data_t testData;
+		testData.data = test.extract();
+
+	}
 */
+
+// Check UNKNOWN blood sample against SCREEN samples
+
+// If NEGATIVE then NO ANTIGENS
+
+// else if POSITIVE then check UNKNOWN against NEGATIVE REFLEX
+
+// return ANTIGENS
+
 
 }
