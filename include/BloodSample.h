@@ -5,11 +5,16 @@
  *      Author: Stuart
  */
 
-#include <iostream>
+
 
 #ifndef BLOODSAMPLE_H_
 #define BLOODSAMPLE_H_
 
+#include <iostream>
+#include <string>
+#include <SampleFactory.h>
+
+class SampleFactory;
 typedef enum{
 	D = 0,C,E,c,e,f,
 	C_w,V,M,N,S,s,P1,
@@ -33,6 +38,7 @@ typedef union {
 
 
 class BloodSample {
+
 public:
 	BloodSample();
 	virtual ~BloodSample();
@@ -42,23 +48,29 @@ public:
 };
 
 class TestSample:public BloodSample{
+friend class SampleFactory;
 public:
-	TestSample( int id, bool reaction );
-	int
-		getID( void ) const ;
+	//TestSample();
+	int32_t
+		getID( void ) const ,
+		getAntigens( void ) const;
 
 	bool
 		getReactionStatus( void ) const;
 
+	void
+		setAntigenData( int32_t dateBV );
+
 
 private:
-	int const
-			_ID;
-	bool const
-		_reactionStatus;
+	int
+		_ID;
 
-	antigen_data_t
-		_antigens;
+	int32_t
+		_antigenBV;
+
+	bool
+		_reactionStatus;
 };
 
 
@@ -68,6 +80,7 @@ public:
 
 	void
 		eliminatePossibleAntigens( int32_t negativeTest );
+	int32_t getPossibleAntigens( void ) const;
 
 private:
 	int32_t _reactionBV;
