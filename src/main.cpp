@@ -15,6 +15,8 @@ PatientSample Unknown;
 BloodSample* Screen;
 BloodSample* Reflex;
 
+char header[] = "D\tC\tE\tc\te\tf\tC_w\tV\tM\tN\tS\ts\tP1\tLe_a\tLe_b\tLu_a\tLu_b\tK\tk\tKp_a\tJs_a\tFy_a\tFy_b\tJk_a\tJk_b\tXg_a";
+
 int main(int argc, char *argv[]) {
 
 
@@ -50,6 +52,10 @@ int main(int argc, char *argv[]) {
 		}
 	//cout << endl;
 		y=Unknown.getPossibleAntigens();
-			cout << y << endl;
+			string bit = y.to_string();
+			cout << header << endl;
+			for(int i = 0; i < bit.length(); i++){
+				cout << bit[i] << '\t';
+			}
 			cout << endl;
 }
